@@ -15,13 +15,17 @@ def main():
     # implement input form keyboard and from files
     letter = input()
     if "F" in letter:
-        file = input()
+        fileName = input()
         if "a" in file:
             print("Enter a file name without letter 'a'")
-        with open("./")
+        with open("./test/16", mode = "r") as file:
+            
     # let user input file name to use, don't allow file names with letter a
     # account for github input inprecision
-    
+    if "I" in letter:
+        number = int(input())
+        values = list(map(int, input().split()))
+    print(compute_height(number, values))
     # input number of elements
     # input values in one variable, separate with space, split these values in an array
     # call the function and output it's result

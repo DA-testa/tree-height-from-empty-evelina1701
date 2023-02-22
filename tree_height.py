@@ -6,6 +6,16 @@ import threading
 
 def compute_height(n, parents):
     # Write this function
+    tree = {}
+    root = 0
+    for i in range(n):
+        tree[i]=[]
+    for i, parent in enumerate(parents):
+        parent = parents[i]
+        if parent == -1:
+            root = i
+        else:
+            tree[parent].append(i)
     max_height = 0
     # Your code here
     return max_height
@@ -19,7 +29,8 @@ def main():
         if "a" in file:
             print("Enter a file name without letter 'a'")
         with open("./test/16", mode = "r") as file:
-            
+            number = int(file.readLine().strip())
+            values = list(map(int, file.readLine().strip().split())) 
     # let user input file name to use, don't allow file names with letter a
     # account for github input inprecision
     if "I" in letter:

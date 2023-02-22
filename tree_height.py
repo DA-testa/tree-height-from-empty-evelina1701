@@ -26,7 +26,7 @@ def main():
     letter = input()
     if "F" in letter:
         fileName = input()
-        if "a" in file:
+        if "a" in fileName:
             print("Enter a file name without letter 'a'")
         with open("./test/16", mode = "r") as file:
             number = int(file.readLine().strip())

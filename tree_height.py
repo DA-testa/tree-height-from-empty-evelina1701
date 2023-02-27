@@ -6,25 +6,14 @@ import threading
 
 def compute_height(n, parents):
     # Write this function
-    tree = {}
-    rootIndex = 0
-    for i in range(n):
-        tree[i]=[]
-    for i, parent in enumerate(parents):
-        parent = parents[i]
-        if parent == -1:
-            rootIndex = i
+    height = np.zeroes(n, dtype = int)
+    for i in range (n):
+        if parents[i]==-1:
+            height[i]=1
         else:
-            tree[parent].append(i)
-    findBranch = [(rootIndex,1)]
-    max_height = 0
-    while findBranch:
-        node, height = findBranch.pop()
-        max_height = max(max_height,height)
-        for child in tree[node]:
-            findBranch.append((child, height+1))
+            height[i]= 1 + height[parents[i]]
     # Your code here
-    return max_height
+    return np.max(height)
 
 
 def main():

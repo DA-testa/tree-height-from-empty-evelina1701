@@ -34,9 +34,9 @@ def main():
         fileName = input()
         if "a" in fileName:
             print("Enter a file name without letter 'a'")
-        with open("./test/{fileName}", mode = "r") as file:
-            number = int(file.readline().strip())
-            values = list(map(int, file.readLine().strip().split())) 
+        file=open(fileName,"r")
+        number = int(file.readline().strip())
+        values = list(map(int, file.readLine().strip().split())) 
     # let user input file name to use, don't allow file names with letter a
     # account for github input inprecision
     if "I" in letter:

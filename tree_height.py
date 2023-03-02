@@ -8,14 +8,14 @@ def compute_height(n, parents):
     # Write this function
     tree = {}
     rootIndex = 0
-    for i in range(n):
-        tree[i]=[]
-    for i, parent in enumerate(parents):
-        parent = parents[i]
+    for k in range(n):
+        tree[k]=[]
+    for k, parent in enumerate(parents):
+        parent = parents[k]
         if parent == -1:
-            rootIndex = i
+            rootIndex = k
         else:
-            tree[parent].append(i)
+            tree[parent].append(k)
     findBranch = [(rootIndex,1)]
     max_height = 0
     while findBranch:

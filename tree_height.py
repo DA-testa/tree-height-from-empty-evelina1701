@@ -37,7 +37,7 @@ def main():
             return
         with open(f"./test/{fileName}", mode="r") as file: #te kļūda
             number = int(file.readline().strip())
-            values = list(map(int, file.readLine().strip().split())) 
+            values = list(map(int, file.readline().strip().split())) 
     # let user input file name to use, don't allow file names with letter a
     # account for github input inprecision
     if "I" in letter:

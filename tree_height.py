@@ -10,20 +10,20 @@ def compute_height(n, parents):
     rootIndex = 0
     for k in range(n):
         tree[k]=[]
-    for k, parent in enumerate(parents):
-        parent = parents[k]
-        if parent == -1:
+    for k, par in enumerate(parents):
+        par = parents[k]
+        if par == -1:
             rootIndex = k
         else:
-            tree[parent].append(k)
+            tree[par].append(k)
     findBranch = [(rootIndex,1)]
     max_height = 0
     while findBranch:
         node, height = findBranch.pop()
         max_height = max(max_height,height)
         element = tree[node]
-        for child in element:
-            findBranch.append((child, height+1))
+        for ch in element:
+            findBranch.append((ch, height+1))
     # Your code here
     return max_height
 

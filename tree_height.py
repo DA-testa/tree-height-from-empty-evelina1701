@@ -22,8 +22,12 @@ def compute_height(n, parents):
         node, height = findBranch.pop()
         max_height = max(max_height,height)
         element = tree[node]
-        for ch in element:
-            findBranch.append((ch, height+1))
+        if element:
+            for ch in element:
+                findBranch.append((ch, height+1))
+        else:
+            if height>max_height:
+                max_height=height
     # Your code here
     return max_height
 

@@ -6,6 +6,7 @@ import threading
 
 def compute_height(n, parents):
     # Write this function
+    #tiek izveidota vārdnīca, kura uzglabā katra node bērnu sarakstus, un tiek atrasta koka sakne
     tree = {}
     rootIndex = 0
     for k in range(n):
@@ -16,6 +17,9 @@ def compute_height(n, parents):
            tree[par].append(k)
         else:
             rootIndex = k
+    #tiek izmantots saraksts, kurš uzglabā sākumā sakni un tās augstumu. vēlāk saraksts tiek papildināts ar 
+    # node indeksiem un to augstumiem, izmantojot iepriekšējo node. paralēli tiek atjaunināts maksimālais koka augstums.
+    #cikls turpinās, kamēr saraksts nav tukšs.
     findBranch = [(rootIndex,1)]
     max_height = 0
     while findBranch:

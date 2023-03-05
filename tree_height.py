@@ -35,7 +35,7 @@ def main():
         fileName = input()
         if "a" in fileName:
             return
-        with open(f"./test/{fileName}", mode="r") as file: #te kļūda
+        with open(f"./test/{fileName}", mode="r") as file:
             number = int(file.readline())
             values = list(map(int, file.readline().split())) 
     # let user input file name to use, don't allow file names with letter a
